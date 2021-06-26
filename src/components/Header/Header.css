@@ -1,0 +1,121 @@
+.nav-container {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    position: fixed;
+    background-color: rgb(156, 156, 156);
+    z-index: 100;
+    box-shadow: 0px 1px 5px black;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-control-container {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 100px;
+}
+
+.toggle-control {
+    /* display: block;
+    position: absolute; */
+    /* padding-left: 50px; */
+    /* margin-bottom: 12px; */
+    cursor: pointer;
+    /* font-size: 15px; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* top: 25px;
+    right: 100px; */
+}
+.toggle-control input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.toggle-control input ~ .control {
+    background-color: #892cdc;
+}
+.toggle-control input:checked ~ .control {
+    background-color: rgb(187, 187, 187);
+}
+.toggle-control input:checked ~ .control:after {
+    left: 37px;
+}
+.toggle-control .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 70px;
+    border-radius: 25px;
+    background-color: darkgray;
+    transition: background-color 0.15s ease-in;
+}
+.toggle-control .control:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 1px;
+    width: 32px;
+    height: 32px;
+    border-radius: 25px;
+    background: white;
+    transition: left 0.15s ease-in;
+}
+
+.header {
+    /* width: 100%;
+    cursor: pointer;
+    position: fixed;
+    display: flex; */
+    /* background-color: #39445a; */
+    /* box-shadow: 0px 1px 5px black; */
+    /* justify-content: center; */
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 5vw;
+    padding-bottom: 15px;
+    color: white;
+    /* z-index: 100; */
+}
+
+@media (max-width: 1000px) {
+    .nav-container {
+        padding-top: 15px;
+        font-size: 6.4vw;
+    }
+
+    .toggle-control-container {
+        top: 20px;
+        right: 100px;
+    }
+}
+@media (max-width: 650px) {
+    .toggle-control-container {
+        top: 15px;
+        right: 60px;
+    }
+
+    .toggle-control .control {
+        height: 20px;
+        width: 50px;
+    }
+    .toggle-control .control:after {
+        top: 0px;
+        width: 20px;
+        height: 20px;
+        border-radius: 25px;
+        background: white;
+        transition: left 0.15s ease-in;
+    }
+
+    .toggle-control input:checked ~ .control:after {
+        left: 32px;
+    }
+}
